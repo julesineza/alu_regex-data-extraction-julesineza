@@ -1,113 +1,89 @@
-Here’s the **full Python README.md** in one clean block—ready to copy and paste into your project:
-
----
-
 ```markdown
 # ALU Regex Data Extraction (Python)
 
-This project demonstrates the use of **Regular Expressions (Regex)** in **Python**
-to extract structured data (emails, URLs, phone numbers, etc.) from large blocks
-of unstructured text.
-
-It is an **individual assignment** for the ALU Full-Stack Development program.
-
----
-
-## ✨ Features
-
-The program scans a sample text (or any user-provided text) and extracts:
-
-- ✅ Email addresses
-- ✅ URLs (HTTP/HTTPS)
-- ✅ Phone numbers in various formats
-- ✅ Credit card numbers
-- ✅ Time in **12-hour** or **24-hour** format
-- ✅ HTML tags
-- ✅ Hashtags
-- ✅ Currency amounts (USD format)
-
-You only need to implement **at least 4** of the above to satisfy the assignment,
-but this repository includes **all 8** as a reference.
+This project uses **Python Regular Expressions (Regex)** to extract different types of data
+from a block of text.  
+It demonstrates how to search for multiple patterns such as emails, URLs, phone numbers,
+credit card numbers, times, HTML tags, hashtags, and currency amounts.
 
 ---
 
-## 🛠️ Technology Stack
+## Features
 
-- **Language:** Python 3.10+
-- **Regex Engine:** Python `re` module (standard library)
-- **Version Control:** Git + GitHub
+The script scans a sample text and finds:
+
+- **Emails** – e.g. `user@example.com`
+- **URLs** – e.g. `https://www.example.com`
+- **Phone Numbers** – e.g. `(123) 456-7890`, `123-456-7890`
+- **Credit Cards** – e.g. `1234 5678 9012 3456`
+- **Time (24-hour)** – e.g. `14:30`
+- **Time (12-hour)** – e.g. `2:30 PM`
+- **HTML Tags** – e.g. `<p>`, `<img src="image.jpg">`
+- **Hashtags** – e.g. `#example`
+- **Currency** – e.g. `$19.99`, `$1,234.56`
 
 ---
 
-## 📂 Repository Structure
+## Technology
+
+- **Language:** Python 3.x
+- **Modules:** `re` (built-in)
+
+No third-party packages are required.
+
+---
+
+##File Overview
 ```
 
-alu_regex-data-extraction-<username>/
-├─ main.py # Entry point – runs the extraction demo
-├─ patterns.py # Regex patterns for each data type
-├─ extractor.py # Core logic to apply patterns to input text
-├─ sample_text.txt # Example text for testing
-└─ README.md # Project documentation
+main.py # Contains all code: patterns, sample text, extraction function, and output
+README.md # This documentation
 
 ````
 
 ---
 
-## 🚀 Getting Started
+##How to Run
 
-### 1️⃣ Prerequisites
-- [Python 3.10+](https://www.python.org/downloads/)
-- Git (for cloning the repository)
-
-### 2️⃣ Installation
+1. **Install Python 3** if not already installed:
+2. **Clone or download** this repository:
 ```bash
-# Clone the repository
-git clone https://github.com/<your-username>/alu_regex-data-extraction-<your-username>.git
-
+git clone https://github.com/julesineza/alu_regex-data-extraction-julesineza.git
 cd alu_regex-data-extraction-<your-username>
 ````
 
-No external libraries are required.
-All code uses Python's built-in modules.
-
----
-
-## ▶️ Running the Program
-
-Run the demo using:
+3. **Run the script**:
 
 ```bash
 python main.py
 ```
 
-This will:
+The program will:
 
-1. Load the sample text (`sample_text.txt` or the embedded example).
-2. Apply all regex patterns.
-3. Print matches grouped by category.
+- Load the built-in sample text.
+- Apply all regex patterns.
+- Print all matches grouped by category.
 
 ---
 
 ## 💡 Using Your Own Text
 
-Replace the content of `sample_text.txt` or modify `main.py`:
+Replace the `sample_text` variable inside **main.py** with any text you want to search.
+
+Example:
 
 ```python
-from extractor import extract_data
-from patterns import PATTERNS
-
-custom_text = """
-Contact us at help@mydomain.org or visit https://mydomain.org/contact.
-Call (555) 123-4567 any time before 6:00 PM!
+sample_text = """
+Contact me at help@mydomain.org
+Visit https://mydomain.org
 """
-results = extract_data(custom_text, PATTERNS)
-for category, matches in results.items():
-    print(category, matches)
 ```
+
+Run the script again to see matches from your custom text.
 
 ---
 
-## 🧪 Example Output
+## Example Output
 
 ```
 Emails:
@@ -116,62 +92,33 @@ Emails:
 
 URLs:
   https://www.example.com
-  https://subdomain.example.org/page
+  https://sub.example.org/page
 
 Phone Numbers:
   (123) 456-7890
   123-456-7890
+  123.456.7890
 
 ...
 ```
 
 ---
 
-## ⚡ Key Regex Patterns
+## Key Points
 
-| Data Type      | Example Pattern (Simplified)                     |                              |         |
-| -------------- | ------------------------------------------------ | ---------------------------- | ------- |
-| Email          | `[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}` |                              |         |
-| URL            | `https?://[^\s]+`                                |                              |         |
-| Phone Number   | \`($\d{3}$\s?                                    | \d{3}\[-.])\d{3}\[-.]\d{4}\` |         |
-| Credit Card    | `\b(?:\d{4}[ -]?){3}\d{4}\b`                     |                              |         |
-| Time (24-hour) | \`\b(\[01]?\d                                    | 2\[0-3]):\[0-5]\d\b\`        |         |
-| Time (12-hour) | \`\b(1\[0-2]                                     | 0?\[1-9]):\[0-5]\d\s?(AM     | PM)\b\` |
-| HTML Tag       | `<\/?[a-z][^>]*>`                                |                              |         |
-| Hashtag        | `#\w+`                                           |                              |         |
-| Currency (\$)  | `\$\d{1,3}(,\d{3})*(\.\d{2})?`                   |                              |         |
-
-> ⚠️ Patterns are simplified for clarity and may need tightening for production.
+- **`re.findall`** is used to return all matches for each pattern.
+- Patterns handle multiple formats (e.g., phone numbers with dots, dashes, or parentheses).
+- The `if __name__ == "__main__":` block ensures the code runs only when executed directly.
 
 ---
 
-## 🧹 Code Quality & Edge Cases
+## Author
 
-- Handles **multiple formats** (e.g., phone numbers with dashes, dots, or parentheses).
-- `extract_data()` returns a dictionary for easy testing or further processing.
-- The `if __name__ == "__main__":` guard ensures that the demo runs only when
-  the script is executed directly.
-
----
-
-## 📜 License
-
-This project is released under the **MIT License**.
-Feel free to use or adapt the regex patterns for learning or other projects.
-
----
-
-## 👨‍💻 Author
-
-**I J (ijptr2)**
-[GitHub Profile](https://github.com/ijptr2)
+- Jules Ineza
 
 ```
 
 ---
+**Instructions**:
 
-✅ **Usage**:
-1. Save this content as **README.md** in the root of your Python project.
-2. Replace `<username>` with your GitHub username in the clone URL.
-3. Commit and push it to your GitHub repository.
 ```
