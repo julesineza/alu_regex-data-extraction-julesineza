@@ -11,7 +11,7 @@ HTML tags: <p> <div class="example"> <img src="image.jpg" alt="description">
 Hashtags: #example #ThisIsAHashtag
 Prices: $19.99 $1,234.56
 """
-
+#all regex for the case 
 patterns = {
     "Emails": r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}',
     "URLs": r'https?://[^\s]+',
@@ -24,17 +24,11 @@ patterns = {
     "Currency": r'\$\d{1,3}(?:,\d{3})*(?:\.\d{2})?'
 }
 
-def extract_data(text, patterns):
-    results = {}
+
+#function to extract the matching data with the regex
+def extract_data(text,patterns):
+    results= {}
     for key, pattern in patterns.items():
         matches = re.findall(pattern, text)
         results[key] = matches
     return results
-
-if __name__ == "__main__":
-    results = extract_data(sample_text, patterns)
-    for category, matches in results.items():
-        print(f"\n{category}:")
-        for m in matches:
-            # re.findall can return tuples when groups are used -> join if needed
-            print(" ", m if isinstance(m, str) else " ".join(m))
