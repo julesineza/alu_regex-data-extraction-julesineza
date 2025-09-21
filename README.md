@@ -47,16 +47,16 @@ README.md # This documentation
 
 1. **Install Python 3** if not already installed:
 2. **Clone or download** this repository:
-```bash
+
 git clone https://github.com/julesineza/alu_regex-data-extraction-julesineza.git
 cd alu_regex-data-extraction-<your-username>
-````
+
 
 3. **Run the script**:
 
-```bash
+
 python main.py
-```
+
 
 The program will:
 
@@ -66,7 +66,7 @@ The program will:
 
 ---
 
-## 💡 Using Your Own Text
+##Using Your Own Text
 
 Replace the `sample_text` variable inside **main.py** with any text you want to search.
 
@@ -122,3 +122,4 @@ Phone Numbers:
 **Instructions**:
 
 ```
+````
