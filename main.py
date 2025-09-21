@@ -32,3 +32,10 @@ def extract_data(text,patterns):
         matches = re.findall(pattern, text)
         results[key] = matches
     return results
+
+if __name__ == "__main__":
+    results = extract_data(sample_text, patterns)
+    for category, matches in results.items():
+        print(f"\n{category}:")
+        for m in matches:
+            print(" ", m if isinstance(m, str) else " ".join(m))
