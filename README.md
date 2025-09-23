@@ -3,16 +3,16 @@ It explains the project, shows **sample input/output**, and includes a basic **t
 
 ---
 
-### ✅ `README.md`
+### `README.md`
 
-````markdown
+```markdown
 # Regex Data Extraction
 
 A small **web application** that uses **Regular Expressions (Regex)** to extract specific types of data from any block of text.
 
 ---
 
-## 🚀 Features
+## Features
 
 This tool can detect and extract:
 
@@ -27,13 +27,11 @@ This tool can detect and extract:
 
 ---
 
-## 🛠️ How to Run
+## How to Run
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/alu_regex-data-extraction-{YourUsername}.git
-   ```
-````
+   git clone https://github.com/alu_regex-data-extraction-julesineza.git
+```
 
 2. Open `index.html` in any modern browser.
 3. Paste or type your test data into the **textarea**.
@@ -41,7 +39,7 @@ This tool can detect and extract:
 
 ---
 
-## 🧪 Sample Input
+## Sample Input
 
 Paste the text below into the application:
 
@@ -60,7 +58,7 @@ Budget estimate: $19.99 for snacks, $1,234.56 for equipment.
 
 ---
 
-## ✅ Sample Output
+## Sample Output
 
 When you click **Extract Data**, the results are displayed inside a scrollable results panel:
 
@@ -77,19 +75,20 @@ When you click **Extract Data**, the results are displayed inside a scrollable r
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 alu_regex-data-extraction-{YourUsername}/
 │
 ├─ index.html       # Main web page
+|- style.css        # styling the whole web app
 ├─ script.js        # Regex extraction logic
 └─ README.md        # Project overview and instructions
 ```
 
 ---
 
-## ⚡ Notes
+## Notes
 
 - All patterns are written to handle **multiple matches** in a single text block.
 - Edge cases (like malformed input) are handled gracefully by simply returning no matches.
@@ -98,15 +97,4 @@ alu_regex-data-extraction-{YourUsername}/
 ```
 
 ---
-
-### 🔑 Tips for Submission
-- Add a **screenshot** of the running app to your repo for extra polish.
-- Commit with clear messages like:
-  - `feat: add regex for phone numbers`
-  - `docs: add sample input/output to README`
-
-This README is short, clear, and meets the **Output Presentation** rubric by providing:
-- **Sample input**
-- **Sample output**
-- **Test cases in a table**
 ```
