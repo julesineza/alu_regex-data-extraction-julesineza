@@ -1,125 +1,112 @@
-```markdown
-# ALU Regex Data Extraction (Python)
-
-This project uses **Python Regular Expressions (Regex)** to extract different types of data
-from a block of text.  
-It demonstrates how to search for multiple patterns such as emails, URLs, phone numbers,
-credit card numbers, times, HTML tags, hashtags, and currency amounts.
+Here’s a **simple and clean README.md** you can drop directly into your repository.
+It explains the project, shows **sample input/output**, and includes a basic **test case table** for your “Output Presentation” rubric.
 
 ---
 
-## Features
+### ✅ `README.md`
 
-The script scans a sample text and finds:
+````markdown
+# Regex Data Extraction
 
-- **Emails** – e.g. `user@example.com`
-- **URLs** – e.g. `https://www.example.com`
-- **Phone Numbers** – e.g. `(123) 456-7890`, `123-456-7890`
-- **Credit Cards** – e.g. `1234 5678 9012 3456`
-- **Time (24-hour)** – e.g. `14:30`
-- **Time (12-hour)** – e.g. `2:30 PM`
-- **HTML Tags** – e.g. `<p>`, `<img src="image.jpg">`
-- **Hashtags** – e.g. `#example`
-- **Currency** – e.g. `$19.99`, `$1,234.56`
+A small **web application** that uses **Regular Expressions (Regex)** to extract specific types of data from any block of text.
 
 ---
 
-## Technology
+## 🚀 Features
 
-- **Language:** Python 3.x
-- **Modules:** `re` (built-in)
+This tool can detect and extract:
 
-No third-party packages are required.
+- **Email addresses** (e.g., `user@example.com`)
+- **URLs** (e.g., `https://www.example.com`)
+- **Phone numbers** (e.g., `(123) 456-7890`)
+- **Credit card numbers** (e.g., `1234 5678 9012 3456`)
+- **Time formats** (12-hour and 24-hour, e.g., `2:30 PM`, `14:30`)
+- **HTML tags** (e.g., `<div>`, `<p>`)
+- **Hashtags** (e.g., `#LaunchDay`)
+- **Currency amounts** (e.g., `$19.99`, `$1,234.56`)
 
 ---
 
-##File Overview
-```
+## 🛠️ How to Run
 
-main.py # Contains all code: patterns, sample text, extraction function, and output
-README.md # This documentation
-
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/alu_regex-data-extraction-{YourUsername}.git
+   ```
 ````
 
----
-
-##How to Run
-
-1. **Install Python 3** if not already installed:
-2. **Clone or download** this repository:
-
-git clone https://github.com/julesineza/alu_regex-data-extraction-julesineza.git
-cd alu_regex-data-extraction-<your-username>
-
-
-3. **Run the script**:
-
-
-python main.py
-
-
-The program will:
-
-- Load the built-in sample text.
-- Apply all regex patterns.
-- Print all matches grouped by category.
+2. Open `index.html` in any modern browser.
+3. Paste or type your test data into the **textarea**.
+4. Click **Extract Data** to see all matches neatly organized.
 
 ---
 
-##Using Your Own Text
+## 🧪 Sample Input
 
-Replace the `sample_text` variable inside **main.py** with any text you want to search.
-
-Example:
-
-```python
-sample_text = """
-Contact me at help@mydomain.org
-Visit https://mydomain.org
-"""
-```
-
-Run the script again to see matches from your custom text.
-
----
-
-## Example Output
+Paste the text below into the application:
 
 ```
-Emails:
-  user@example.com
-  firstname.lastname@company.co.uk
+Hello team,
 
-URLs:
-  https://www.example.com
-  https://sub.example.org/page
-
-Phone Numbers:
-  (123) 456-7890
-  123-456-7890
-  123.456.7890
-
-...
+Please reach me at user@example.com or firstname.lastname@company.co.uk for updates.
+Visit https://www.example.com or https://subdomain.example.org/page.
+Call me at (123) 456-7890 or 123-456-7890.
+Use card 1234 5678 9012 3456 for payments.
+The meeting starts at 2:30 PM or 14:30.
+Here is a snippet: <div class="example"><p>Hello!</p></div>
+Tag the event with #LaunchDay.
+Budget estimate: $19.99 for snacks, $1,234.56 for equipment.
 ```
 
 ---
 
-## Key Points
+## ✅ Sample Output
 
-- **`re.findall`** is used to return all matches for each pattern.
-- Patterns handle multiple formats (e.g., phone numbers with dots, dashes, or parentheses).
-- The `if __name__ == "__main__":` block ensures the code runs only when executed directly.
+When you click **Extract Data**, the results are displayed inside a scrollable results panel:
+
+| Category         | Matches                                                                                                                      |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **Emails**       | [user@example.com](mailto:user@example.com), [firstname.lastname@company.co.uk](mailto:firstname.lastname@company.co.uk)     |
+| **URLs**         | [https://www.example.com](https://www.example.com), [https://subdomain.example.org/page](https://subdomain.example.org/page) |
+| **PhoneNumbers** | (123) 456-7890, 123-456-7890                                                                                                 |
+| **CreditCards**  | 1234 5678 9012 3456                                                                                                          |
+| **Times**        | 2:30 PM, 14:30                                                                                                               |
+| **HTMLTags**     | `<div class="example">`, `<p>`, `</p>`, `</div>`                                                                             |
+| **Hashtags**     | #LaunchDay                                                                                                                   |
+| **Currency**     | \$19.99, \$1,234.56                                                                                                          |
 
 ---
 
-## Author
+## 📂 Repository Structure
 
-- Jules Ineza
+```
+alu_regex-data-extraction-{YourUsername}/
+│
+├─ index.html       # Main web page
+├─ script.js        # Regex extraction logic
+└─ README.md        # Project overview and instructions
+```
+
+---
+
+## ⚡ Notes
+
+- All patterns are written to handle **multiple matches** in a single text block.
+- Edge cases (like malformed input) are handled gracefully by simply returning no matches.
+- Works entirely in the browser with no external dependencies.
 
 ```
 
 ---
-**Instructions**:
 
+### 🔑 Tips for Submission
+- Add a **screenshot** of the running app to your repo for extra polish.
+- Commit with clear messages like:
+  - `feat: add regex for phone numbers`
+  - `docs: add sample input/output to README`
+
+This README is short, clear, and meets the **Output Presentation** rubric by providing:
+- **Sample input**
+- **Sample output**
+- **Test cases in a table**
 ```
-````
