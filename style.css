@@ -43,6 +43,9 @@ button:hover {
 background: #FA812F;
 }
 
+p {
+    opacity: 50%;
+}
 
 .results-container {
 margin-top: 20px;
