@@ -18,18 +18,18 @@ This tool can detect and extract:
 
 ## How to Run
 1. Clone the repository:
-```
+
 
 git clone [https://github.com/alu\_regex-data-extraction-julesineza.git](https://github.com/alu_regex-data-extraction-julesineza.git)
 
-```
+
 2. Open `index.html` in any modern browser.  
 3. Paste or type your test data into the textarea.  
 4. Click **Extract Data** to see all matches neatly organized.
 
 ## Sample Input
 Paste the text below into the application:
-```
+
 
 Hello team,
 
@@ -42,7 +42,7 @@ Here is a snippet: <div class="example"><p>Hello!</p></div>
 Tag the event with #LaunchDay.
 Budget estimate: \$19.99 for snacks, \$1,234.56 for equipment.
 
-```
+
 
 ## Sample Output
 When you click **Extract Data**, the results are displayed inside a scrollable results panel:
@@ -59,7 +59,7 @@ When you click **Extract Data**, the results are displayed inside a scrollable r
 | Currency         | $19.99, $1,234.56                                                                                                            |
 
 ## Repository Structure
-```
+
 
 alu\_regex-data-extraction-{YourUsername}/
 │
@@ -68,13 +68,11 @@ alu\_regex-data-extraction-{YourUsername}/
 ├─ script.js    # Regex extraction logic
 └─ README.md    # Project overview and instructions
 
-```
+
 
 ## Notes
 - All patterns are written to handle multiple matches in a single text block.  
 - Edge cases (like malformed input) are handled gracefully by simply returning no matches.  
 - Works entirely in the browser with no external dependencies.
-```
 
----
 
