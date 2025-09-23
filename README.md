@@ -1,30 +1,27 @@
-Here’s a **simple and clean README.md** you can drop directly into your repository.
-It explains the project, shows **sample input/output**, and includes a basic **test case table** for your “Output Presentation” rubric.
-
----
-
 ### `README.md`
 
 ```markdown
 # Regex Data Extraction
 
-A small **web application** that uses **Regular Expressions (Regex)** to extract specific types of data from any block of text.
+A small web application that uses Regular Expressions (Regex) to extract specific types of data from any block of text.
 
 ---
 
 ## Features
 
 This tool can detect and extract:
+```
 
-- **Email addresses** (e.g., `user@example.com`)
-- **URLs** (e.g., `https://www.example.com`)
-- **Phone numbers** (e.g., `(123) 456-7890`)
-- **Credit card numbers** (e.g., `1234 5678 9012 3456`)
-- **Time formats** (12-hour and 24-hour, e.g., `2:30 PM`, `14:30`)
-- **HTML tags** (e.g., `<div>`, `<p>`)
-- **Hashtags** (e.g., `#LaunchDay`)
-- **Currency amounts** (e.g., `$19.99`, `$1,234.56`)
+- Email addresses (e.g., `user@example.com`)
+- URLs (e.g., `https://www.example.com`)
+- Phone numbers (e.g., `(123) 456-7890`)
+- Credit card numbers (e.g., `1234 5678 9012 3456`)
+- Time formats (12-hour and 24-hour, e.g., `2:30 PM`, `14:30`)
+- HTML tags (e.g., `<div>`, `<p>`)
+- Hashtags (e.g., `#LaunchDay`)
+- Currency amounts(e.g., `$19.99`, `$1,234.56`)
 
+```
 ---
 
 ## How to Run
@@ -37,6 +34,7 @@ This tool can detect and extract:
 3. Paste or type your test data into the **textarea**.
 4. Click **Extract Data** to see all matches neatly organized.
 
+```
 ---
 
 ## Sample Input
@@ -44,6 +42,7 @@ This tool can detect and extract:
 Paste the text below into the application:
 
 ```
+
 Hello team,
 
 Please reach me at user@example.com or firstname.lastname@company.co.uk for updates.
@@ -54,6 +53,7 @@ The meeting starts at 2:30 PM or 14:30.
 Here is a snippet: <div class="example"><p>Hello!</p></div>
 Tag the event with #LaunchDay.
 Budget estimate: $19.99 for snacks, $1,234.56 for equipment.
+
 ```
 
 ---
@@ -78,17 +78,21 @@ When you click **Extract Data**, the results are displayed inside a scrollable r
 ## Repository Structure
 
 ```
+
 alu_regex-data-extraction-{YourUsername}/
 │
-├─ index.html       # Main web page
-|- style.css        # styling the whole web app
-├─ script.js        # Regex extraction logic
-└─ README.md        # Project overview and instructions
+├─ index.html # Main web page
+|- style.css # styling the whole web app
+├─ script.js # Regex extraction logic
+└─ README.md # Project overview and instructions
+
 ```
 
 ---
 
 ## Notes
+
+```
 
 - All patterns are written to handle **multiple matches** in a single text block.
 - Edge cases (like malformed input) are handled gracefully by simply returning no matches.
@@ -96,5 +100,4 @@ alu_regex-data-extraction-{YourUsername}/
 
 ```
 
----
 ```
